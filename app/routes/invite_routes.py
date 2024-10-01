@@ -6,6 +6,7 @@ invite_bp = Blueprint('invite_bp', __name__)
 invite_service = InviteService(mongo)
 
 @invite_bp.route('/invites', methods=['GET'])
+
 def get_invites():
     invites = invite_service.get_all_invites()
     return jsonify(invites), 200
