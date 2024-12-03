@@ -1,10 +1,9 @@
-import os
-from dotenv import load_dotenv
+# app/config/config.py
 
-load_dotenv()
-
-class Config():
-    MONGO_URL = os.getenv("MONGO_URL")
-    DEBUG = os.getenv("FLASK_ENV") == 'development'
+class Config:
+    MONGO_URL_DEV = 'mongodb://localhost:27017/templates'
+    MONGO_URL_PROD = 'mongodb+srv://kelinizkz:FFahOhTBTGeTRibT@kelinizkz.6md65.mongodb.net/templates'
+    DEBUG = True
+    FLASK_ENV = 'development'  # or 'production'
 
 config = Config()

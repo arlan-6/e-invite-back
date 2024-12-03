@@ -1,5 +1,7 @@
 from bson.json_util import dumps
 from bson.objectid import ObjectId
+from flask import jsonify, make_response
+
 
 class InviteEdits:
     def __init__(self, mongo):
@@ -46,7 +48,7 @@ class InviteEdits:
 
     # Delete invite by ID
     def delete_invite(self, invite_id):
-        self.collection.delete_one({"inviteId":invite_id})
+        self.collection.delete_one({"id":invite_id})
 
     # Fetch invites by user email
     def get_invites_by_user(self, user_email):
@@ -116,10 +118,16 @@ class Invites:
         self.collection = mongo.db.invites
 
     def publish_invite(self, invite_data):
-        if self.collection.find_one({"inviteId": invite_data.get("inviteId")}):
-            raise ValueError("Duplicate inviteId found")
+        # existing_invite = self.collection.find_one({"inviteId": invite_data.get("inviteId")})
+        # if existing_invite:
+        #     print('duplicate inviteId found')
+        #     return {"error": "Duplicate inviteId found", "id": existing_invite.get("id")}, 400
+            # return {"error": "Duplicate inviteId found", "id": existing_invite.get("id")}, 500
         self.collection.insert_one(invite_data)
-        return invite_data.get("inviteId")
+        return {"id": invite_data.get("id")}, 201
+
+    def is_duplicate(self, invite_data):
+        return self.collection.find_one({"inviteId": invite_data.get("inviteId")})
 
     def get_invites(self):
         return list(self.collection.find())
@@ -137,17 +145,31 @@ class Invites:
                 invite['_id'] = str(invite['_id'])
         return invites
 
+    def update_rsvp(self, invite_id, rsvp_data):
+        self.collection.update_one(
+            {"id": invite_id},
+            {"$push": {"rsvp": rsvp_data}}
+        )
+        return self.get_invite_by_id(invite_id)
+
     def update_invite(self, invite_id, invite_data):
         if '_id' in invite_data:
             del invite_data['_id']
         self.collection.update_one(
-            {"inviteId": invite_id},
+            {"id": invite_id},
             {"$set": invite_data}
         )
         return self.get_invite_by_id(invite_id)
 
+    def update_invite_remove_rsvp(self, invite_id, invite_data):
+        self.collection.update_one(
+            {"id": invite_id},
+            {"$pull": {"rsvp": invite_data}}
+        )
+        return self.get_invite_by_id(invite_id)
+
     def delete_invite(self, invite_id):
-        self.collection.delete_one({"inviteId": invite_id})
+        self.collection.delete_one({"id": invite_id})
 
     def get_invites_by_user(self, user_email):
         return list(self.collection.find({"email": user_email}))

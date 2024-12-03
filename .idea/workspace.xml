@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3404ec12-ecb0-4c90-becb-643f62431aef" name="Changes" comment="vrode daiyn to deploy to vercel">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/invite_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invite_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/invite_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/invite_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/invite_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/invite_service.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,9 +40,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="SIGN_OFF_COMMIT" value="true" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {}
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/arlan-6/e-invite-back.git&quot;,

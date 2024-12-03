@@ -64,18 +64,28 @@ class InviteService:
     def publish_invite(self, invite_data):
         return self.invite_model.publish_invite(invite_data)
 
+    def is_duplicate(self, invite_data):
+        return self.invite_model.is_duplicate(invite_data)
+
     # def create_invite(self, invite_data):
     #     return self.invite_model.create_invite(invite_data)
     #
     def get_invite_by_id(self, invite_id):
         return self.invite_model.get_invite_by_id(invite_id)
-    #
+
+    def get_users_invites_by_email(self, email):
+        return self.invite_model.get_invites_by_email(email)
+
+
     # def get_invites_by_email(self, email):
     #     return self.invite_model.get_invites_by_email(email)
     #
-    # def update_invite(self, invite_id, invite_data):
-    #     return self.invite_model.update_invite(invite_id, invite_data)
-    #
-    # def delete_invite(self, invite_id):
-    #     return self.invite_model.delete_invite(invite_id)
+    def update_invite(self, invite_id, invite_data):
+        return self.invite_model.update_rsvp(invite_id, invite_data)
+
+    def update_invite_remove_rsvp(self, invite_id, invite_data):
+        return self.invite_model.update_invite_remove_rsvp(invite_id, invite_data)
+
+    def delete_invite(self, invite_id):
+        return self.invite_model.delete_invite(invite_id)
 

@@ -81,9 +81,11 @@ def unlike_template():
 
 # ------------------- Invite Blueprint -------------------
 
-@invite_bp.route('/invites/publish', methods=['post'])
+@invite_bp.route('/invites/publish', methods=['POST'])
 def publish_invite():
     invite_data = request.json
+    if invite_service.is_duplicate(invite_data):
+        return jsonify({"error": "Duplicate invite found","id":invite_service.is_duplicate(invite_data).get("id")}), 400
     invite_id = invite_service.publish_invite(invite_data)
     return jsonify({"id": invite_id}), 201
 
@@ -91,3 +93,26 @@ def publish_invite():
 def get_published_invite(invite_id):
     invite = invite_service.get_invite_by_id(invite_id)
     return jsonify(invite), 200
+
+@invite_bp.route('/invites', methods=['GET'])
+def get_users_invites_by_email():
+    email = request.args.get('email')
+    invites = invite_service.get_users_invites_by_email(email)
+    return jsonify(invites), 200
+
+@invite_bp.route('/invites/delete/<invite_id>', methods=['DELETE'])
+def delete_invite_by_id(invite_id):
+    invite_service.delete_invite(invite_id)
+    return jsonify({"message": "Invite deleted"}), 200
+
+@invite_bp.route('/invites/update/<invite_id>', methods=['PUT'])
+def update_invite_by_id(invite_id):
+    invite_data = request.json
+    updated_invite = invite_service.update_invite(invite_id, invite_data)
+    return jsonify(updated_invite), 200
+
+@invite_bp.route('/invites/delete/rsvp/<invite_id>', methods=['PUT'])
+def delete_rsvp(invite_id):
+    invite_data = request.json
+    updated_invite = invite_service.update_invite_remove_rsvp(invite_id, invite_data)
+    return jsonify(updated_invite), 200
