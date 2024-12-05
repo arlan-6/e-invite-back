@@ -1,5 +1,11 @@
-from app.models.invite_model import InviteEdits, Template, Invites
+from app.models.invite_model import InviteEdits, Template, Invites,Test
 
+class TestService:
+    def __init__(self, mongo):
+        self.test_model = Test(mongo)
+
+    def test(self):
+        return self.test_model.test()
 
 class InviteTemplateService:
     def __init__(self, mongo):

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3404ec12-ecb0-4c90-becb-643f62431aef" name="Changes" comment="test msg" />
+    <list default="true" id="3404ec12-ecb0-4c90-becb-643f62431aef" name="Changes" comment="test msg 3">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/invite_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/invite_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/invite_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/invite_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/invite_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/invite_service.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -189,7 +194,23 @@
       <option name="project" value="LOCAL" />
       <updated>1733426577600</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test msg 2">
+      <option name="closed" value="true" />
+      <created>1733426999009</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733426999009</updated>
+    </task>
+    <task id="LOCAL-00013" summary="test msg 3">
+      <option name="closed" value="true" />
+      <created>1733427221652</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733427221652</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,6 +235,8 @@
     <MESSAGE value="mongourl with test route" />
     <MESSAGE value="mongourl with test route1" />
     <MESSAGE value="test msg" />
-    <option name="LAST_COMMIT_MESSAGE" value="test msg" />
+    <MESSAGE value="test msg 2" />
+    <MESSAGE value="test msg 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="test msg 3" />
   </component>
 </project>

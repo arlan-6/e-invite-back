@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from app.services.invite_service import InviteService, InviteTemplateService
+from app.services.invite_service import InviteService, InviteTemplateService,TestService
 from app.app import mongo
 
 invite_bp = Blueprint('invite_bp', __name__)
@@ -12,7 +12,9 @@ def test():
 
 @invite_bp.route('/testmongo', methods=['GET'])
 def test_mongo():
-    return jsonify({"message": f"MongoDB connected: {mongo.db.name}"}), 200
+    test_service = TestService(mongo)
+    return jsonify(test_service.test()), 200
+
 
 # ------------------- Invite Template Blueprint -------------------
 @invite_bp.route('/edit/invites', methods=['GET'])

@@ -3,6 +3,16 @@ from bson.objectid import ObjectId
 from flask import jsonify, make_response
 
 
+class Test:
+    def __init__(self, mongo):
+        self.collection = mongo.db.templates
+
+    def test(self):
+        result = self.collection.find_one()
+        if result and '_id' in result:
+            result['_id'] = str(result['_id'])
+        return result
+
 class InviteEdits:
     def __init__(self, mongo):
         self.collection = mongo.db.userEditedTemplates
