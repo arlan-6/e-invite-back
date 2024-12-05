@@ -5,6 +5,15 @@ from app.app import mongo
 invite_bp = Blueprint('invite_bp', __name__)
 invite_template_service = InviteTemplateService(mongo)
 invite_service = InviteService(mongo)
+
+@invite_bp.route('/test', methods=['GET'])
+def test_mongo_connection():
+    try:
+        mongo.db.command('ping')
+        return jsonify({"message": "MongoDB connection is successful"}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 @invite_bp.route('/edit/invites', methods=['GET'])
 def get_invites():
     invites = invite_template_service.get_all_invites()
