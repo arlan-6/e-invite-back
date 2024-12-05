@@ -10,10 +10,9 @@ invite_service = InviteService(mongo)
 def test():
     return jsonify({"message": "test msg"}), 200
 
-@invite_bp.route('/testmongo', methods=['get'])
+@invite_bp.route('/testmongo', methods=['GET'])
 def test_mongo():
-    print(mongo.db)
-    return jsonify({"message": "test msg"}), 200
+    return jsonify({"message": f"MongoDB connected: {mongo.db.name}"}), 200
 
 # ------------------- Invite Template Blueprint -------------------
 @invite_bp.route('/edit/invites', methods=['GET'])
