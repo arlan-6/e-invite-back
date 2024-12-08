@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3404ec12-ecb0-4c90-becb-643f62431aef" name="Changes" comment="test msg 4">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-    </list>
+    <list default="true" id="3404ec12-ecb0-4c90-becb-643f62431aef" name="Changes" comment="gevent removed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -217,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733427869083</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="gevent removed">
+      <option name="closed" value="true" />
+      <created>1733655271627</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733655271627</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +249,7 @@
     <MESSAGE value="test msg 2" />
     <MESSAGE value="test msg 3" />
     <MESSAGE value="test msg 4" />
-    <option name="LAST_COMMIT_MESSAGE" value="test msg 4" />
+    <MESSAGE value="gevent removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="gevent removed" />
   </component>
 </project>
