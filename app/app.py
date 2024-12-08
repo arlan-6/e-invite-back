@@ -13,11 +13,11 @@ def create_app():
     # mongo.init_app(app)
 
 
-    if config.FLASK_ENV == 'production':
-        app.config['MONGO_URI'] = config.MONGO_URL_PROD
-    else:
-        app.config['MONGO_URI'] = config.MONGO_URL_PROD
-
+    # if config.FLASK_ENV == 'production':
+    #     app.config['MONGO_URI'] = config.MONGO_URL_PROD
+    # else:
+    #     app.config['MONGO_URI'] = config.MONGO_URL_PROD
+    app.config['MONGO_URI'] = config.MONGO_URL_PROD
     app.config['DEBUG'] = config.DEBUG
     mongo.init_app(app)
 
